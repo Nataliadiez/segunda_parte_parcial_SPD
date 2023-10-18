@@ -1,25 +1,27 @@
-# Ejemplo Documentación 
+# Proyecto segunda parte
 ![Tinkercad](./img/ArduinoTinkercad.jpg)
 
 
-## Integrantes 
+# Integrantes 
 - Oscar Alonso
 - Andrés Anguindegui
 - Natalia Diez
 
 
-## Proyecto: Modificación con interruptor deslizante y números primos. Agregado de motor de corriente continua y sensor de temperatura.
+# Proyecto: Modificación con interruptor deslizante y números primos. Agregado de motor de corriente continua y sensor de temperatura.
 ![Tinkercad](./img/Proyecto_2.png)
 
 
-## Descripción
-La primera fase del proyecto consiste en el reemplazo de uno de los botones del primer proyecto, por un interruptor deslizante. Al deslizar el mismo, se representan números primos o números enteros en los display de 7 segmentos.
-En la segunda fase del proyecto, se implementan un sistema de refrigeración que incluye un motor de corriente continua, un transistor (NPN), una batería de 9 Voltios y un sensor de temperatura (TMP36). 
+# Descripción
+La primera fase del proyecto consiste en el reemplazo de uno de los botones del primer proyecto (botón de reset), por un interruptor deslizante. 
+Al deslizar el mismo, se representan números primos o números enteros en los display de 7 segmentos.
+En la segunda fase del proyecto se implementan: un sistema de refrigeración que incluye un motor de corriente continua, un transistor (NPN), una batería de 9 Voltios y un sensor de temperatura (TMP36). 
 Los displays muestran la temperatura a la cual el cooler del CPU se activará, pudiendo esta ser ajustada por los botones de incremento y reducción.
+A medida que la temperatura aumenta, la velocidad del cooler (motor cc) va a aumentar, para refrigerar más rápido el CPU.
 En el momento en que la temperatura está por debajo del valor definido, el motor se apaga.
 
 
-## Funciones
+# Funciones
 ## encenderSegmento
 La función encenderSegmento es una función utilizada para controlar la visualización en un display de 7 segmentos. 
 A través de esta función, se pueden encender o apagar segmentos específicos del display, permitiendo mostrar dígitos numéricos.
@@ -121,7 +123,10 @@ Parámetros
 
 Divide el número en sus dígitos de decena y unidad, y luego activa los segmentos correspondientes en el display para representar estos dígitos en orden.
 
-# multiplexación
+## multiplexación
+En este proyecto se utiliza la técnica de la multiplexación, en la función mostrarNumeroEnDisplay, la cual combina los dos canales de información (DISPLAY_DECENA y DISPLAY_UNIDAD) utilizando un sólo medio de transmisión (a través de los mismos pines).
+Cuando DISPLAY_DECENA se establece en 0, el display de las decenas se activa y se muestra la cifra correspondiente. Luego, después de un pequeño retraso (delay(10)), se cambia el estado de DISPLAY_DECENA a 1, lo que apaga el display de las decenas.
+Después de mostrar la decena, el programa selecciona y muestra la unidad de manera similar, pero esta vez en el display de unidades.
 
 ## calcularPrimoSiguiente
 Función que calcula el siguiente número primo al proporcionado en el parámetro.
@@ -188,17 +193,15 @@ int calcularPrimoAnterior(int nuevoNumero){
 ~~~
 
 ## :robot: Link al proyecto
-- [proyecto](https://www.tinkercad.com/things/ehpzdGsuO3Q?sharecode=D0ccmFK8HFq4Cpc5kR4ZHy3QSPFQ4Mxe5icBIgs1Tp0)
+- [proyecto](https://www.tinkercad.com/things/84LH4CgUB3I)
 
 ---
 ### Fuentes
-- [Consejos para documentar](https://www.sohamkamani.com/how-to-write-good-documentation/#architecture-documentation).
+- [Video de la cátedra](https://www.youtube.com/watch?v=_Ry7mtURGDE&list=PL7LaR6_A2-E11BQXtypHMgWrSR-XOCeyD&index=4&t=3445s&ab_channel=UTNFRA).
 
-- [Lenguaje Markdown](https://markdown.es/sintaxis-markdown/#linkauto).
+- [Teoría multiplexación](https://teoriadelastelecomunicaciones.files.wordpress.com/2011/11/multiplexacion.pdf).
 
-- [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-- [Tutorial](https://www.youtube.com/watch?v=oxaH9CFpeEE).
+- [Captura de imágenes](https://www.tinkercad.com/).
 
 - [Emojis](https://gist.github.com/rxaviers/7360908).
 
