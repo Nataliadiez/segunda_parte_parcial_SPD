@@ -1,3 +1,12 @@
+/*
+-----------CONSIGNA SEGUNDA PARTE DEL PARCIAL----------------------------------
+	1- Sustituir uno de los botones por un interruptor de deslizante (switch) de dos posiciones. 
+  Dependiendo de la posición del interruptor, el display debe mostrar o bien el contador (como en la Parte 1) o los números primos en el rango de 0 a 99.
+  2- Investigar un componente electrónico adicional que podría mejorar este proyecto.
+  3- Agregar un componente entre los siguientes: sensor de fuerza, sensor de flexión o sensor de temperatura.
+---------------------------------------------------------------------
+*/
+
 #define B_PIN 13
 #define A_PIN 12
 #define F_PIN 11
@@ -63,7 +72,7 @@ void loop()
     {
       if (contador < 99)
       {
-        contador = contador + 1;
+        contador++;
       }
       //--------------------------------------
       if (digitalRead(SWITCH_NUMEROS_PRIMOS) == HIGH)
@@ -77,7 +86,7 @@ void loop()
     {
       if (contador > 0)
       {
-        contador = contador - 1;
+        contador--;
       }
       //--------------------------------------
       if (digitalRead(SWITCH_NUMEROS_PRIMOS) == HIGH)
